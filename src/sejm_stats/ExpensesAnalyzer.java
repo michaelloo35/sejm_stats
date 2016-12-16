@@ -1,6 +1,6 @@
 package sejm_stats;
 
-public class Expenses {
+public class ExpensesAnalyzer {
 
 	public int singleMpExpenses(String Id){
 		return 0;

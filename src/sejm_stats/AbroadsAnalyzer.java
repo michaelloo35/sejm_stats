@@ -1,6 +1,6 @@
 package sejm_stats;
 
-public class Abroads {
+public class AbroadsAnalyzer {
 
 	public String biggestTraveler (){
 		return "tmp";
