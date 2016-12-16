@@ -21,6 +21,6 @@ public class JsonParser {
 	}
 	
 	
-
+	// rozne klasy zwracajace pliki w odpowiednich strukturach
 	
 }

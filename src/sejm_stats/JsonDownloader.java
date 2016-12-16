@@ -12,7 +12,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JsonDownloader {
-	// temporary class
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -21,7 +20,6 @@ public class JsonDownloader {
         }
         return sb.toString();
     }
-    // temporary class
     public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
         InputStream is = new URL(url).openStream();
         try {
