@@ -38,4 +38,4 @@ public class Parser {
 	
 	// rozne klasy zwracajace pliki w odpowiednich strukturach
 	
-}
+

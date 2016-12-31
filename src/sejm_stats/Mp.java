@@ -1,19 +1,23 @@
 package sejm_stats;
 
-import java.util.LinkedList;
-
 import com.google.gson.annotations.SerializedName;
 
 public class Mp {
+	@SerializedName("data")
+	private Data data;
 	@SerializedName("id")
 	private String id;
-	@SerializedName("ludzie.nazwa")
-	private String ludzie_nazwa;
-	@SerializedName("poslowie.kadencja")
-	LinkedList<String> kadencje;	
-	@SerializedName("wyjazdy")
-	LinkedList<Trip> wyjazdy;
+	
 	public String getId(){
 		return this.id;
+	}
+	public void setId(String id){
+		this.id = id;
+	}
+	public Data getData(){
+		return this.data;
+	}
+	public void setData(Data data){
+		this.data = data;
 	}
 }
