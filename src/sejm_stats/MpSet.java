@@ -7,16 +7,16 @@ import com.google.gson.annotations.SerializedName;
 public class MpSet {
 	
 	@SerializedName("Dataobject")
-	public LinkedList<Mp> mplist;
+	private LinkedList<Mp> mpList;
 	
 	public LinkedList<Mp> getMpList(){
-		return this.mplist;
+		return this.mpList;
 	}
-	public void setMpList(LinkedList<Mp> mplist){
-		this.mplist = mplist;
+	public void setMpList(LinkedList<Mp> mpList){
+		this.mpList = mpList;
 	}
 	
 	public void concatenate(LinkedList<Mp> tmp){
-		this.mplist.addAll(tmp);
+		this.mpList.addAll(tmp);
 	}
 }

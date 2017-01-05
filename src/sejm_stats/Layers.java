@@ -7,21 +7,21 @@ import com.google.gson.annotations.SerializedName;
 
 public class Layers {
 	@SerializedName("wydatki")
-	private Expenses wydatki;
+	private Expenses expenses;
 	@SerializedName("wyjazdy")
-	private LinkedList<Map<String,String>> wyjazdy;
+	private LinkedList<Map<String,String>> trips;	// null jesli nie bylo zadnych wyjazdow
 	
-	public void setWydatki(Expenses wydatki){
-		this.wydatki = wydatki;
+	public void setExpenses(Expenses expenses){
+		this.expenses = expenses;
 	}
-	public Expenses getRok(){
-		return this.wydatki;
+	public Expenses getExpenses(){
+		return this.expenses;
 	}
-	public void setWyjazdy(LinkedList<Map<String,String>> wyjazdy){
-		this.wyjazdy = wyjazdy;
+	public void setTrips(LinkedList<Map<String,String>> trips){
+		this.trips = trips;
 	}
-	public LinkedList<Map<String,String>> getWyjazdy(){
-		return this.wyjazdy;
+	public LinkedList<Map<String,String>> getTrips(){
+		return this.trips;
 	}
 
 }

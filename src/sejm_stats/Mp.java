@@ -7,7 +7,7 @@ public class Mp {
 	private Data data;
 	@SerializedName("id")
 	private String id;
-	
+	@SerializedName("layers")
 	private Layers layers;
 	public String getId(){
 		return this.id;

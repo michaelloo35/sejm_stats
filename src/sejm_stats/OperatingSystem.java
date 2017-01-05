@@ -8,7 +8,7 @@ public class OperatingSystem {
 	public static void main(String[] args) throws MalformedURLException, IOException {
 			
 		FileDownloader Initiate = new FileDownloader();
-		Initiate.initializeMpList();
+		Initiate.initializeMpSet();
 		
 		/*ArgumentParser arguments = new ArgumentParser();
 		for ( String arg : args){

@@ -1,12 +1,12 @@
 package sejm_stats;
 
-import java.util.Map;
+import java.util.LinkedList;
 
 import com.google.gson.annotations.SerializedName;
 
 public class Rocznik {
 	@SerializedName("pola")
-	private Map<String,String> pola;
+	private LinkedList<String> pola;
 	@SerializedName("rok")
 	private String rok;
 	
@@ -16,10 +16,10 @@ public class Rocznik {
 	public String getRok(){
 		return this.rok;
 	}
-	public void setPola(Map<String,String> pola){
+	public void setPola(LinkedList<String> pola){
 		this.pola = pola;
 	}
-	public Map<String,String> getPola(){
+	public LinkedList<String> getPola(){
 		return this.pola;
 	}
 }
