@@ -45,6 +45,7 @@ public class FileDownloader {
         	this.mps.concatenate(tmp.getMpList());
     	}
     	this.fullfillMpSet();
+    	System.out.print("");
     }
     
     private void fullfillMpSet()throws MalformedURLException, IOException{
@@ -60,6 +61,7 @@ public class FileDownloader {
         	Gson gson = new Gson();
         	tmp = gson.fromJson(new FileReader(mpDetails), Mp.class);
         	mp.setLayers(tmp.getLayers());
+        	mp.getLayers().loadTrips();
     	}
     }
     
