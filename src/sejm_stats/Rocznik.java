@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Rocznik {
 	@SerializedName("pola")
-	Map<String,String> pola;
+	private Map<String,String> pola;
 	@SerializedName("rok")
-	String rok;
+	private String rok;
 	
 	public void setRok(String rok){
 		this.rok = rok;

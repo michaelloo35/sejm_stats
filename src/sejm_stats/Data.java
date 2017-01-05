@@ -1,27 +1,37 @@
 package sejm_stats;
 
-import java.util.Map;
+import java.util.LinkedList;
 
 import com.google.gson.annotations.SerializedName;
 
 public class Data {
-	@SerializedName("ludzie.nazwa")
-	private String ludzie_nazwa;
+	@SerializedName("poslowie.imie_pierwsze")
+	private String firstName;
 	@SerializedName("poslowie.kadencja")
-	private Map<String,String> kadencje; // spr. pola mapy mo¿e byæ 1 lub 2 np [(0,7),(1,8)](klucz,wartosc)
+	private LinkedList<String> kadencje; // lista kadencji
+	@SerializedName("poslowie.nazwisko")
+	private String lastName;
 	
-	public void setLudzie_nazwa(String ludzie_nazwa){
-		this.ludzie_nazwa = ludzie_nazwa;
+	
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
 	}
-	public String getLudzie_nazwa(){
-		return this.ludzie_nazwa;
+	public String getFirstName(){
+		return this.firstName;
 	}
 	
-	public void setKadencje(Map<String,String> kadencje){
+	public void setKadencje(LinkedList<String> kadencje){
 		this.kadencje = kadencje;
 	}
-	public Map<String,String> getKadencje(){
+	public LinkedList<String> getKadencje(){
 		return this.kadencje;
+	}
+	
+	public void setLastName(String lastName){
+		this.lastName = lastName;
+	}
+	public String getLastName(){
+		return this.lastName;
 	}
 	
 }

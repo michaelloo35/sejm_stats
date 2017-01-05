@@ -15,4 +15,8 @@ public class MpSet {
 	public void setMpList(LinkedList<Mp> mplist){
 		this.mplist = mplist;
 	}
+	
+	public void concatenate(LinkedList<Mp> tmp){
+		this.mplist.addAll(tmp);
+	}
 }

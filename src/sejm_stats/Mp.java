@@ -8,16 +8,25 @@ public class Mp {
 	@SerializedName("id")
 	private String id;
 	
+	private Layers layers;
 	public String getId(){
 		return this.id;
 	}
 	public void setId(String id){
 		this.id = id;
 	}
+	
 	public Data getData(){
 		return this.data;
 	}
 	public void setData(Data data){
 		this.data = data;
+	}
+	
+	public Layers getLayers(){
+		return this.layers;
+	}
+	public void setLayers(Layers layers){
+		this.layers = layers;
 	}
 }
