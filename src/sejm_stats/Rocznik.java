@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Rocznik {
 	@SerializedName("pola")
-	private LinkedList<String> pola;
+	private LinkedList<Double> pola;
 	@SerializedName("rok")
 	private String rok;
 	
@@ -16,10 +16,10 @@ public class Rocznik {
 	public String getRok(){
 		return this.rok;
 	}
-	public void setPola(LinkedList<String> pola){
+	public void setPola(LinkedList<Double> pola){
 		this.pola = pola;
 	}
-	public LinkedList<String> getPola(){
+	public LinkedList<Double> getPola(){
 		return this.pola;
 	}
 }

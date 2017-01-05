@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 
 public class FileDownloader {
 	
-	private MpSet mps;
+	public MpSet mps;
 	private boolean update;
 	
 	public FileDownloader(){

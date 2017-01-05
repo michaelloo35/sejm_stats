@@ -9,7 +9,9 @@ public class OperatingSystem {
 			
 		FileDownloader Initiate = new FileDownloader();
 		Initiate.initializeMpSet();
+		ExpensesAnalyzer tmp = new ExpensesAnalyzer();
 		
+		System.out.println(tmp.averageMpExpenses(Initiate.mps));
 		/*ArgumentParser arguments = new ArgumentParser();
 		for ( String arg : args){
 			arguments.addArgument(arg);			

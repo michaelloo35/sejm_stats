@@ -1,7 +1,15 @@
 package sejm_stats;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 public class StatsViewer {
 	private String argument;
+	private FileDownloader sources;
+	StatsViewer () throws MalformedURLException, IOException{
+		this.sources = new FileDownloader();
+		this.sources.initializeMpSet();
+	}
 	
 	public String getArg(){
 		return argument;
@@ -10,7 +18,7 @@ public class StatsViewer {
 		argument = newArg;
 	}
 	
-	public void exec(){
+	public void execute() throws MalformedURLException, IOException{
 		switch(this.argument){
 		case "suma wydatków pos³a/pos³anki o okreœlonym imieniu i nazwisku" :
 		break;
@@ -31,6 +39,10 @@ public class StatsViewer {
 		break;
 		
 		case "listê wszystkich pos³ów, którzy odwiedzili W³ochy" :
+		break;
+		
+		case "update" :
+			this.sources.updateMpSet();
 		break;
 		
 		default :
