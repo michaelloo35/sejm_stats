@@ -12,6 +12,7 @@ public class OperatingSystem {
 		ExpensesAnalyzer tmp = new ExpensesAnalyzer();
 		
 		System.out.println(tmp.averageMpExpenses(Initiate.mps));
+		System.out.println(tmp.singleMpExpenses("Bartosz", "Józwiak", Initiate.mps));
 		/*ArgumentParser arguments = new ArgumentParser();
 		for ( String arg : args){
 			arguments.addArgument(arg);			

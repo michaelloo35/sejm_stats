@@ -24,7 +24,7 @@ public class FileDownloader {
     	if(!SDir.exists())
     		SDir.mkdir();
    
-    	URL src = new URL("https://api-v3.mojepanstwo.pl/dane/poslowie.json");	// first envoy and default data values
+    	URL src = new URL("https://api-v3.mojepanstwo.pl/dane/poslowie.json");	// first 50 envoys list and default data values
     	int i = 0; 
     	File mpList = new File("./Sources/MpList" + " " + i + ".json");
     	if(!mpList.exists() || this.update == true)
@@ -60,6 +60,7 @@ public class FileDownloader {
     			FileUtils.copyURLToFile(src, mpDetails);
         	Gson gson = new Gson();
         	tmp = gson.fromJson(new FileReader(mpDetails), Mp.class);
+        	mp.getData().loadCadencies();
         	mp.setLayers(tmp.getLayers());
         	mp.getLayers().loadTrips();
     	}

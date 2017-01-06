@@ -30,7 +30,7 @@ public class Layers {
 	@SuppressWarnings("unchecked")
 	public void loadTrips(){
 		if (this.tmpTrips.isJsonObject())
-			this.trips = null;
+			this.trips = new LinkedList<Map<String,String>>();
 		else{
 			//System.out.print(this.tmpTrips.toString());
 			this.trips = new Gson().fromJson(this.tmpTrips, LinkedList.class);
