@@ -7,12 +7,13 @@ public class OperatingSystem {
 
 	public static void main(String[] args) throws MalformedURLException, IOException {
 			
-		FileDownloader Initiate = new FileDownloader();
-		Initiate.initializeMpSet();
-		ExpensesAnalyzer tmp = new ExpensesAnalyzer();
+		StatsViewer main = new StatsViewer();
+		main.setArgument1("info");
+		main.setArgument2("Anna");
+		main.setArgument3("Nemœ");
+		main.setCadency(7);
 		
-		System.out.println(tmp.averageMpExpenses(Initiate.mps));
-		System.out.println(tmp.singleMpExpenses("Bartosz", "Józwiak", Initiate.mps));
+		main.execute();
 		/*ArgumentParser arguments = new ArgumentParser();
 		for ( String arg : args){
 			arguments.addArgument(arg);			

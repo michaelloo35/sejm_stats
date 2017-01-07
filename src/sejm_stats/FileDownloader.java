@@ -45,7 +45,6 @@ public class FileDownloader {
         	this.mps.concatenate(tmp.getMpList());
     	}
     	this.fullfillMpSet();
-    	System.out.print("");
     }
     
     private void fullfillMpSet()throws MalformedURLException, IOException{
@@ -69,6 +68,7 @@ public class FileDownloader {
     public void updateMpSet()throws MalformedURLException, IOException{		// updates the files
     	this.update = true;
     	this.initializeMpSet();
+    	System.out.println("update completed successfully:)");
     	this.update = false;
     }
     

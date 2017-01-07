@@ -7,7 +7,7 @@ public class AbroadsAnalyzer {
 
 	public String biggestTraveler (MpSet mps,int cadency){ //pos³a/pos³anki, który wykona³ najwiêcej podró¿y zagranicznych
 		boolean is7thCadency = false;
-		if(cadency != 7 || cadency != 8)
+		if(cadency != 7 && cadency != 8)
 			throw new IllegalArgumentException("nie obsluguje takiej kadencji");
 		else if (cadency == 7)
 			is7thCadency = true;
@@ -29,13 +29,13 @@ public class AbroadsAnalyzer {
 				tripsCounter = 0;
 			}
 		}
-		return ("najwiêcej podró¿y zagranicznych : " + myMp.getData().getFirstName() + " " + myMp.getData().getLastName());
+		return (myMp.getData().getFirstName() + " " + myMp.getData().getLastName() + " " + tripsMaxCounter + " podrozy");
 
 	};
 	
 	public String longestAbroad(MpSet mps,int cadency) {	//pos³a/pos³anki, który najd³u¿ej przebywa³ za granic¹
 		boolean is7thCadency = false;
-		if(cadency != 7 || cadency != 8)
+		if(cadency != 7 && cadency != 8)
 			throw new IllegalArgumentException("nie obsluguje takiej kadencji");
 		else if (cadency == 7)
 			is7thCadency = true;
@@ -56,13 +56,13 @@ public class AbroadsAnalyzer {
 				}
 				daysCounter = 0;
 			}
-		return ("najd³u¿ej zagranic¹ : " + myMp.getData().getFirstName() + " " + myMp.getData().getLastName());
+		return (myMp.getData().getFirstName() + " " + myMp.getData().getLastName() + " " + daysMaxCounter + " dni");
 		
 	};
 	
 	public String mostExpensiveSingleTravel (MpSet mps,int cadency){			// pos³a/pos³anki, który odby³ najdro¿sz¹ podró¿ zagraniczn¹
 		boolean is7thCadency = false;
-		if(cadency != 7 || cadency != 8)
+		if(cadency != 7 && cadency != 8)
 			throw new IllegalArgumentException("nie obsluguje takiej kadencji");
 		else if (cadency == 7)
 			is7thCadency = true;
@@ -82,17 +82,17 @@ public class AbroadsAnalyzer {
 						}
 					}
 			}
-		return ("najdrozsza podró¿ odby³ : " + myMp.getData().getFirstName() + " " + myMp.getData().getLastName() + "jej koszt to : " + expenseMaxCounter.toString());
+		return (myMp.getData().getFirstName() + " " + myMp.getData().getLastName() + "jej koszt to : " + expenseMaxCounter.toString());
 		
 	}
-	public LinkedList<Mp> mpsThatVisited (String country,MpSet mps,int cadency){ // listê wszystkich pos³ów, którzy odwiedzili kraj w³ochy
+	public LinkedList<Mp> mpsThatVisitedItaly (MpSet mps,int cadency){ // listê wszystkich pos³ów, którzy odwiedzili kraj w³ochy
 		boolean is7thCadency = false;
-		if(cadency != 7 || cadency != 8)
+		if(cadency != 7 && cadency != 8)
 			throw new IllegalArgumentException("nie obsluguje takiej kadencji");
 		else if (cadency == 7)
 			is7thCadency = true;
 		LinkedList<Mp> myMps = new LinkedList<>();
-		country = "W³ochy";
+		String country = "W³ochy";
 		for (Mp mp : mps.getMpList())
 			if((mp.getData().isCadency7() == is7thCadency || mp.getData().isCadency8() == !is7thCadency)){
 				for(Map<String,String> trip : mp.getLayers().getTrips())

@@ -5,7 +5,7 @@ public class ExpensesAnalyzer {
 	public Double singleMpExpenses(String firstName,String lastName,MpSet mps,int cadency){ 	//suma wydatków pos³a/pos³anki o okreœlonym imieniu i nazwisku
 		
 		boolean is7thCadency = false;
-		if(cadency != 7 || cadency != 8)
+		if(cadency != 7 && cadency != 8)
 			throw new IllegalArgumentException("nie obsluguje takiej kadencji");
 		else if (cadency == 7)
 			is7thCadency = true;
@@ -29,7 +29,7 @@ public class ExpensesAnalyzer {
 	
 	public Double singleMpOfficeExpenses(String firstName,String lastName,MpSet mps,int cadency){			//wysokoœci wydatków na 'drobne naprawy i remonty biura poselskiego' okreœlonego pos³a/pos³anki
 		boolean is7thCadency = false;
-		if(cadency != 7 || cadency != 8)
+		if(cadency != 7 && cadency != 8)
 			throw new IllegalArgumentException("nie obsluguje takiej kadencji");
 		else if (cadency == 7)
 			is7thCadency = true;
@@ -57,7 +57,7 @@ public class ExpensesAnalyzer {
 	
 	public Double averageMpExpenses(MpSet mps,int cadency){				// œredniej wartoœci sumy wydatków wszystkich pos³ów
 		boolean is7thCadency = false;
-		if(cadency != 7 || cadency != 8)
+		if(cadency != 7 && cadency != 8)
 			throw new IllegalArgumentException("nie obsluguje takiej kadencji");
 		else if (cadency == 7)
 			is7thCadency = true;
