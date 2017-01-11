@@ -8,27 +8,35 @@ public class Parser {
 	private String argument2;
 	private String argument3;
 	private int cadency;
-	public void parse(String[] args) {
-		try {
+	public void parse(String[] args)throws IOException {
+		
+			
 			if (args.length > 4 || args.length == 0)
-				throw new IOException("nie poprawna liczba argumentów b¹dz format argumentów jest niepoprawny podaj argumenty w nastepujacym formacie EBNF: info|update [imie nazwisko] 7|8");
+				throw new IOException("nie poprawna liczba argumentów b¹dz format argumentów jest niepoprawny podaj argumenty w nastepujacym formacie EBNF: \"info [imie nazwisko] 7|8\" | \"update\"");
 			if (!args[0].equals("info") && !args[0].equals("update"))
-				throw new IOException("program nie obsluguje takiego trybu b¹dz format argumentów jest niepoprawny podaj argumenty w nastepujacym formacie EBNF: info|update [imie nazwisko] 7|8");
+				throw new IOException("program nie obsluguje takiego trybu b¹dz format argumentów jest niepoprawny podaj argumenty w nastepujacym formacie EBNF: \"info [imie nazwisko] 7|8\" | \"update\"");
 			if (args[0].equals("info") && args.length == 2 ){
 				this.argument1 = "infobez";
+				if(!args[1].equals("7") && !args[1].equals("8"))
+					throw new IOException("niepoprawny numer kadencji podaj argumenty w nastepujacym formacie EBNF: \"info [imie nazwisko] 7|8\" | \"update\"");
 				this.cadency = Integer.parseInt(args[1]);
 			}
-			else if(args.length == 4){
+			else if(args.length == 4 && !args[0].equals("update")){
+				if (!args[3].equals("7") && !args[3].equals("8"))
+					throw new IOException ("niepoprawny numer kadencji podaj argumenty w nastepujacym formacie EBNF: \"info [imie nazwisko] 7|8\" | \"update\"");
 			this.argument1 = args[0];
 			this.argument2 = args[1];
 			this.argument3 = args[2];
 			this.cadency = Integer.parseInt(args[3]);
 			}
+			else if (args.length == 1)
+				if (args[0].equals("update"))
+					this.argument1 = args[0];
+				else
+					throw new IOException("nie poprawna liczba argumentów b¹dz format argumentów jest niepoprawny podaj argumenty w nastepujacym formacie EBNF: \"info [imie nazwisko] 7|8\" | \"update\"");
 			else
-				throw new IOException ("cos poszlo nie tak przy parsowaniu argumentów podaj argumenty w nastepujacym formacie EBNF: info|update [imie nazwisko] 7|8");
-		} catch (IOException e) {
-			System.out.println(e);
-		}
+				throw new IOException ("cos poszlo nie tak przy parsowaniu argumentów podaj argumenty w nastepujacym formacie EBNF: \"info [imie nazwisko] 7|8\" | \"update\"");
+		
 
 	}
 	public String getArgument1() {
