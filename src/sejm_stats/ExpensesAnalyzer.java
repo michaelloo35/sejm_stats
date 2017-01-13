@@ -2,7 +2,7 @@ package sejm_stats;
 
 public class ExpensesAnalyzer {
 
-	public Double singleMpExpenses(String firstName,String lastName,MpSet mps,int cadency){ 	//suma wydatków pos³a/pos³anki o okreœlonym imieniu i nazwisku
+	public Double singleMpExpenses(String firstName,String lastName,MpSet mps,int cadency)throws IllegalArgumentException{ 	//suma wydatków pos³a/pos³anki o okreœlonym imieniu i nazwisku
 		
 		boolean is7thCadency = false;
 		if(cadency != 7 && cadency != 8)
